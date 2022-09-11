@@ -1,6 +1,7 @@
 function evaluate(expression){
-    expression = expression.replace(new RegExp("!1", "g"), 0)
-    expression = expression.replace(new RegExp("!0", "g"), 1)
+    expression = expression
+    .replace(new RegExp("!1", "g"), 0)
+    .replace(new RegExp("!0", "g"), 1)
 
     while(expression.includes("(")) {
         for (let i = 0; i < expression.length; i++) {
@@ -18,8 +19,9 @@ function evaluate(expression){
                 }
             }
         }
-        expression = expression.replace(new RegExp("!1", "g"), 0)
-        expression = expression.replace(new RegExp("!0", "g"), 1)
+        expression = expression
+        .replace(new RegExp("!1", "g"), 0)
+        .replace(new RegExp("!0", "g"), 1)
     }
     expression = replaceExp("(" + expression + ")")
     return expression
