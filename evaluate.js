@@ -18,6 +18,8 @@ function evaluate(expression){
                 }
             }
         }
+        expression = expression.replace(new RegExp("!1", "g"), 0)
+        expression = expression.replace(new RegExp("!0", "g"), 1)
     }
     expression = replaceExp("(" + expression + ")")
     return expression
